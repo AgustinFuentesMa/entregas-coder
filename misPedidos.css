@@ -1,0 +1,293 @@
+
+
+header{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-color: #3C393B;
+    display: grid;
+    margin: 0%;
+}
+.nav-bar
+{
+    display: grid;
+    background-color: #CF742F;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid black 3px;
+    grid-template-areas: 
+    "logo links";
+}
+
+li
+{
+    grid-area: links;
+    display: inline;
+}
+
+.links
+{
+    margin: inherit; 
+}
+.logo
+{
+    grid-area: logo;
+    height: 90px;
+    width: 80px;
+}
+
+h1
+{
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-family: Boldonse;
+    font-size: 32px;
+}
+
+.menu a
+{
+  color: #ffffff;
+  text-decoration: none;
+  margin: 5px;  
+   align-self: center;
+}
+
+.pedidos
+{
+    background-color: #ffffff;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.card
+{
+    display: grid;
+    justify-content: space-around;
+    grid-template-areas: "card1 card2 card3 card4";
+    font-family:poppins,sans-serif;
+}
+
+.card1
+{
+    grid-area: card1;
+}
+
+.card2
+{
+    grid-area: card2;
+}
+
+.card3
+{
+    grid-area: card3;
+}
+
+.card4
+{
+    grid-area: card4;
+}
+
+@media(max-width:768px)
+{
+    .card
+    {
+        grid-template-areas: 
+        "card1 card2"
+        "card3 card4";
+    }
+    .pedidos
+    {
+        height: 900px;
+    }
+}
+
+@media(max-width:480px)
+{
+    .card
+    {
+        grid-template-areas: 
+        "card1" "card2"
+        "card3" "card4";
+    }
+    .pedidos
+    {
+        height: 1700px;
+    }
+}
+
+.card img
+{
+    height: 230px;
+}
+
+.card1 .estado-pedido
+{
+    font-size: 23px;
+    color: #EBBF13;
+
+}
+
+.card2 .estado-pedido
+{
+    color: #CF742F;
+    font-size: 23px;
+}
+
+.card3 .estado-pedido
+{
+    color: red;
+    font-size: 23px;
+}
+
+.card4 .estado-pedido
+{
+    color: #33D529;
+    font-size: 23px;  
+}
+
+p
+{
+    font-size: 17px;
+}
+
+.card1:hover
+{
+    border: #3C393B solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card2:hover
+{
+    border: #3C393B solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card3:hover
+{
+    border: #3C393B solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.card4:hover
+{
+    border: #3C393B solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+h2
+{
+    font-family:poppins,sans-serif;
+    font-size: 25px;
+    margin-left: 5%;
+}
+
+.footer
+{
+    background-color: #282627; 
+    color: #ecf0f1;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    display: grid;
+    gap: 30px;
+    margin-top: 30px;
+    grid-template-areas:
+        "about enlaces redes"
+        "copyright copyright copyright"; 
+    grid-template-columns: 45% 25% 25%; 
+}
+
+.footer-links ul li a 
+{
+    color: #ecf0f1;
+    text-decoration:underline;
+}
+
+.footer ul
+{
+    padding: 1px;
+}
+
+.footer h3 
+{
+    font-family: Boldonse;  
+    letter-spacing: 3px;
+}
+
+.footer-redes a 
+{
+    color: #ecf0f1;
+    text-decoration:none;
+}
+
+.iconosRedes 
+{
+    display: flex;
+    gap: 15px; 
+    margin-top: 15px;
+}
+
+.iconosRedes img 
+{
+    width: 32px; 
+    height: 32px;
+    border-radius: 50%; 
+}
+
+.footer-copyright 
+{
+    grid-area: copyright;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #CF742F;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bdc3c7;
+}
+
+@media (max-width: 991px) 
+{
+    .footer 
+    {
+        grid-template-areas:
+            "about about"
+            "links redes"
+            "copyright copyright";
+        grid-template-columns: 45% 45%; 
+    }
+
+     h3 
+    {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 599px) 
+{
+    .footer 
+    {
+        grid-template-areas:
+            "about"
+            "links"
+            "redes"
+            "copyright";
+        grid-template-columns: 100%; 
+        padding: 30px 15px; 
+        text-align: center; 
+    }
+
+    h3 
+    {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .iconosRedes
+    {
+        justify-content: center; 
+    }
+}
