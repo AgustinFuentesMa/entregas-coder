@@ -1,69 +1,90 @@
-//variables
-$color-letra: white;
-$color-letra2: black;
-
+@use '_variables';
+@use 'base';
+@use 'extends';
 
 header{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @extend %fuente-franklin;
 }
-body{
-    background-color: #3C393B;
-    display: grid;
-    margin: 0%;
-}
-.nav-bar
+
+.titulo
 {
-    display: grid;
-    background-color: #CF742F;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: solid $color-letra2 3px;
-    grid-template-areas: 
-    "logo links";
-
-    li
-   {
-    grid-area: links;
-    display: inline;
-   }
-
-.links
-   {
-    margin: inherit; 
-   }
-.logo
-   {
-    grid-area: logo;
-    height: 90px;
-    width: 80px;
-   } 
-}
-
-h1
-{
-    padding: 30px;
+   padding: 30px;
     text-align: center;
-    color: $color-letra;
+    color: variables.$color-letra;
     font-family: Boldonse;
     font-size: 32px;
+}
+
+.encabezado {
+  padding: 30px;
+  text-align: center;
+  color: variables.$color-letra;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  gap: 1px;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #CF742F;
+  padding: 10px 20px;
+  border-bottom: 3px solid variables.$color-letra;
+  position: relative;
+}
+
+.logo {
+  height: 90px;
+  width: 80px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: variables.$color-letra;
+  user-select: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.links li a {
+  color: variables.$color-letra;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .presentation
 
 {
     display: grid;
-}
 
-
-.presentation .banner
-{
+    .banner
+   {
     width: 100%;
     height: 400px;
+   }
 }
+
 
 .menu a
 {
-  color: $color-letra;
+  color: variables.$color-letra;
   text-decoration: none;
   margin: 5px;  
    align-self: center;
@@ -139,14 +160,14 @@ h1
 }
 .card-content h3
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @extend %fuente-franklin;
     font-size: 22px;
     margin-bottom: 8px;
 }
 
 .card-content p
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @extend %fuente-franklin;
     color: #666;
     font-size: 15px;
     line-height: 1.3;
@@ -154,20 +175,17 @@ h1
 
 .card-content .btn
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: inline-block;
-    background-color: #CF742F;
-    text-decoration: none;
-    border-radius: 4px;
+    @extend %btn-estilo;
     align-items: center;
     align-self: center;
     align-content: center;
 }
 
+
 .card-content a
 
 {
-    color: $color-letra;
+    color: variables.$color-letra;
 }
 
 .card-content .precio
@@ -179,7 +197,7 @@ h1
 
 .card-content .costo
 {
-    color: $color-letra2;
+    color: variables.$color-letra2;
     font-size: 18px;
     align-self: baseline;
 }
@@ -333,7 +351,7 @@ h2
 {
     font-family: boldonse;
     font-size: 20px;
-    color: #ffffff;
+    color: variables.$color-letra;
     text-align: center;
 }
 
@@ -344,7 +362,7 @@ h2
 
     p
     {
-        color:$color-letra;
+        color:variables.$color-letra;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 25px;
         align-self: center;
@@ -393,7 +411,7 @@ h2
 
 .contenido .precio-inicial
 {
-    color: $color-letra2;
+    color: variables.$color-letra2;
     font-size: 15px;
     text-decoration: line-through;
 }
@@ -416,25 +434,21 @@ h2
 
 .contenido h3
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @extend %fuente-franklin;
     font-size: 20px;
     margin-bottom: 8px;
 }
 
 .contenido p
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    @extend %fuente-franklin;
     color: #666;
     line-height: 1.3;
 }
 
 .contenido .btn
 {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: inline-block;
-    background-color: #CF742F;
-    text-decoration: none;
-    border-radius: 4px;
+    @extend %btn-estilo;
     align-items: center;
     align-self: center;
     align-content: center;
@@ -443,14 +457,14 @@ h2
 
 .contenido a
 {
-    color: $color-letra;
+    color: variables.$color-letra;
 }
 
 .body
 {
     background-color: #3C393B; 
     margin: 0;
-    background-image: url(./img/WallpaperDog-17279104.jpg); 
+    background-image: url(../img/WallpaperDog-17279104.jpg); 
 }
 
 .formulario
@@ -461,7 +475,7 @@ h2
     .form
     {
         border-radius: 10px;
-    background-color: $color-letra;
+    background-color: variables.$color-letra;
     width: 450px;
     height: 400px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -497,7 +511,7 @@ h2
         margin-left: 35px;
         font-size: 15px;
         cursor: pointer;
-        color: $color-letra2;
+        color: variables.$color-letra2;
         border-radius: 5px;
         border: none;
         width: 50%;
@@ -511,7 +525,7 @@ h2
     a
     {
         text-decoration: none;
-        color: $color-letra;
+        color: variables.$color-letra;
     }
 }
 
@@ -525,7 +539,7 @@ h2
 
 .pedidos
 {
-    background-color: $color-letra;
+    background-color: variables.$color-letra;
     height: 500px;
     border-radius: 15px;
 }
@@ -624,7 +638,7 @@ img
 
 .pedidos h2
 {
-    color: $color-letra2;
+    color: variables.$color-letra2;
     font-family:poppins,sans-serif;
     font-size: 25px;
     margin-left: 5%;
@@ -700,8 +714,7 @@ img
         grid-template-columns: 100%; 
         padding: 30px 15px; 
         text-align: center; 
-    }
-
+    
     h3 
     {
         font-size: 18px;
@@ -712,32 +725,208 @@ img
     {
         justify-content: center; 
     }
+    
+    } 
 }
 
 
-@media (max-width: 768px) {
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .info {
+    grid-template-areas:
+      "img1"
+      "texto1"
+      "img2"
+      "texto2"
+      "texto3"
+      "img3"
+      "texto4";
+    grid-template-columns: 100%;
+
+    img {
+    width: 100%;
+    height: auto;
+    justify-self: center;
+    }
+
+    p {
+    font-size: 20px;
+    padding: 10px;
+    }
+} 
+
+  .container-artista {
+
+  .iframe-artista {
+    width: 100%;
+    height:  100%;
+  }
+
+  .img-artista
+  {
+     width: 100%;
+     height: 100%;
+     max-width:350px
+  }
+
+  }
+  .mapa {
+    flex-direction: column;
+    align-items: center;
+  
+
+  .mapa p {
+    font-size: 22px;
+    text-align: center;
+  }
+ }
+
   .card-container {
     grid-template-areas: 
     "card1 card2"
     "card3 card4"
     "card5 card6";
   }
+}
+
+
+@media screen and (max-width: 767px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #CF742F;
+    width: 100%;
+    z-index: 999;
+  }
+
+  .menu-toggle:checked + .hamburger + .menu {
+    display: block;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .links li {
+    margin: 10px 0;
+  }
 
   
-}
-@media (max-width: 480px) {
-  .card-container {
-    grid-template-areas: 
-    "card1" 
-    "card2"
-    "card3" 
-    "card4"
-    "card5" 
-    "card6";
+  .info {
+    justify-items: center;
+    padding: 10px;
+    grid-template-areas:
+      "img1"
+      "texto1"
+      "img2"
+      "texto2"
+      "texto3"
+      "img3"
+      "texto4";
+    grid-template-columns: 100%;
+
+    img {
+    width: 90%;
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 10px;
+    }
+    
+    p {
+    font-size: 18px;
+    padding: 10px;
+    }
   }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .container-artista
+  {
+ 
+   .artista {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-artista
+   {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 10px 0;
+  }
+}
+
+  .mapa {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;  
+    }
+
+    iframe {
+    width: 90%;
+    height: 250px;
+    }
+
+  }
+
+  .formulario
+  {
+    width: 350px;
+    justify-self: center;
+
+        .icono
+        {
+            justify-self: start;
+            margin: initial;
+            margin-left: 60px;
+        }
+
+        .submit
+        {
+            
+            margin-left: 20px;
+        }
+
+        .titulo-registro
+        {
+            margin-right:80px ;
+        }
+    
+  }
+
   .presentation #img-carousel
   {
     height: 200px;
     width: 100%;
   }
+
+  .card-container
+  {
+    grid-template-areas: 
+    "card1" 
+    "card2" 
+    "card3" 
+    "card4" 
+    "card5" 
+    "card6";
+  }
+
 }
+
+
