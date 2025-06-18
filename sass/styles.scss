@@ -414,7 +414,7 @@ h2
 }
 
 
-.banner-ofertas img
+.banner-ofertas .img-oferta
 {
     width: 100%;
     height: 400px;
@@ -701,6 +701,8 @@ img
     {
         height: 1700px;
     }
+
+    
 }
 
 @media (max-width: 991px) 
@@ -944,7 +946,10 @@ img
     "card5" 
     "card6";
   }
-
+  .banner-ofertas .img-oferta
+    {
+        max-height: 250px;
+    }
 }
 
 
